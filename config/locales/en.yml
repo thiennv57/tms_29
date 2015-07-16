@@ -10,6 +10,7 @@ en:
   titles:
     base_title: "Framgia Training System"
     home: "Home"
+    log_in: "Log in"
   footer:
     home: "Home"
   layouts:
@@ -37,3 +38,6 @@ en:
     remove: "Remove"
   button:
     edit_profile: "Edit Profile"
+  links:
+    logo: "Framgia Training System"
+
