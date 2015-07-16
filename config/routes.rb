@@ -5,4 +5,6 @@ Rails.application.routes.draw do
     root "subjects#index"
     resources :subjects
   end
+
+  resources :users, only: [:index, :show]
 end

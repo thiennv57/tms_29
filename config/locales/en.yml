@@ -35,3 +35,5 @@ en:
   dynamic_form:
     add: "Add task"
     remove: "Remove"
+  button:
+    edit_profile: "Edit Profile"
