@@ -1,0 +1,16 @@
+<%= form_for [:admin, Subject.new] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "form-control" %>
+  <%= f.label :description %>
+  <%= f.text_area :description, class: "form-control" %>
+  <br>
+
+  <table>   
+    <%= f.fields_for :tasks do |builder| %>
+      <%= render "task_fields", f: builder %>
+    <% end %> 
+  </table>
+
+  <p><%= link_to_add_fields t("dynamic_form.add"), f, :tasks %></p>
+  <%= f.submit t("buttons.admin.subject.create"), class: "btn btn-primary" %>
+<% end %>
