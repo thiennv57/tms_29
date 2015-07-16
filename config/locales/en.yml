@@ -20,4 +20,16 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  static_pages:
+    hello: "Welcome to Framgia Training System"
+  header:
+    home: "Home"
+    change_profile: "Change profile"
+  session:
+    login: "Login"
+    logout: "Logout"
+  titles:
+    base_title: "Framgia Training System"
+    home: "Home"
+  footer:
+    home: "Home"
