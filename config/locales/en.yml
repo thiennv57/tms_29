@@ -32,6 +32,9 @@ en:
     admin:
       subject:
         create: "Create new subject"
+    delete_confirm: "Are you sure?"
+    delete: "Delete"
+    edit: "Edit"      
   dynamic_form:
     add: "Add task"
     remove: "Remove"

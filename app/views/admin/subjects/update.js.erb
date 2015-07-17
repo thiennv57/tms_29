@@ -1,0 +1,2 @@
+$("#nav_subject_edit").html("");
+$("#subject-<%= @subject.id %>").html("<%= escape_javascript(render "subject", subject: @subject) %>");

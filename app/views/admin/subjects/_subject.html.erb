@@ -1,0 +1,8 @@
+<table class="subject_record">  
+  <tr id="subject-<%= subject.id %>">
+    <td><%= subject.name %><td>
+    <td><%= link_to t("buttons.delete"), admin_subject_path(subject), remote: true,
+      method: :delete, data: {confirm: t("buttons.delete_confirm")} %></td>
+    <td><%= link_to t("buttons.edit"), edit_admin_subject_path(subject), remote:true %></td>
+  </tr>
+</table>
