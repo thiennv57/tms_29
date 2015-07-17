@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  def show
-  end
+  before_action :init_user, only: [:show]
 
   private
   def init_user
