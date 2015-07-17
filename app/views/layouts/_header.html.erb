@@ -1,19 +1,29 @@
-<header class="navbar navbar-fixed-top header">
+<header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <ul class="nav nav-pills">
-      <li role="presentation"><%= link_to t("header.home"), root_url %></li>
+    <%= link_to t("links.logo"), root_path, id: "logo" %>
+    <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu">
-            <li><%= link_to t("header.change_profile"), "#" %></li>
-            <li class="divider"></li>
-            <li><%= link_to t("session.log_out"), "#" %></li>
-          </ul>
-        </li>
+        <li><%= link_to t("links.home"), root_path %></li>
+        <li><%= link_to t("links.help"), "#" %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to t("links.users"), "#" %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <%= t "layoust.account" %><b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to t("links.profile"), "#" %></li>
+              <li><%= link_to t("links.settings"), "#" %></li>
+              <li class="divider"></li>
+              <li>
+                <%= link_to t("links.log_out"), destroy_user_session_path, method: "delete" %>
+              </li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to t("links.log_in"), new_user_session_path %></li>
+        <% end %>
       </ul>
-    </ul>
+    </nav>
   </div>
 </header>
