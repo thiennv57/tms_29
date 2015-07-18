@@ -4,7 +4,7 @@ class Admin::SubjectsController < ApplicationController
   def index
     @subject = Subject.new
     @subjects = Subject.all
-  end  
+  end
 
   def create
     @subject = Subject.new subject_params
@@ -22,7 +22,7 @@ class Admin::SubjectsController < ApplicationController
       flash.now[:danger] = t "messages.admin.update.fail"
     end
   end
-  
+
   def destroy
     if @subject.destroy
       flash.now[:success] = t "messages.admin.destroy.success"

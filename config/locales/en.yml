@@ -14,19 +14,22 @@ en:
       new_user: "New user"
       show_user: "Show user"
       all_users: "All users"
-    user:
-      edit: "Edit"
+      course:
+        show: "Course detail"
+        new: "Create course"
   footer:
     home: "Home"
   layouts:
     admin:
       subject_mangement: "Subject Management"
-      Course_mangement: "Course Management"
-      User_mangement: "User Management"
+      course_mangement: "Course Management"
+      yser_mangement: "User Management"
       create_new_user: "Create a new user"
       all_users: "All Users"
     user:
       edit: "Edit profile"
+    course: 
+      course_detail:"Course details"  
   messages:
     admin:
       update:
@@ -49,10 +52,26 @@ en:
         create: "Create new subject"
       user:
         create: "Create user"
+      course:
+        create: "Create course"
+        update: "Update"
     user:
       edit_profile: "Edit profile"
       edit_button: "Update"
+    delete: "Delete"
+    edit: "Edit"
+    delete_confirm: "Are you sure?"  
   dynamic_form:
     add: "Add task"
     remove: "Remove"
   error: "error"
+ 
+  dynamic_form:
+    add: "Add task"
+    remove: "Remove"
+  links:
+    logo: "Framgia Training System"
+  status:
+    unlearned: "Start"
+    learning: "Training"
+    learned: "Finish"
