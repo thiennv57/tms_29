@@ -10,7 +10,10 @@ en:
   titles:
     base_title: "Framgia Training System"
     home: "Home"
-    log_in: "Log in"
+    admin:
+      new_user: "New user"
+      show_user: "Show user"
+      all_users: "All users"
   footer:
     home: "Home"
   layouts:
@@ -18,6 +21,8 @@ en:
       subject_mangement: "Subject Management"
       Course_mangement: "Course Management"
       User_mangement: "User Management"
+      create_new_user: "Create a new user"
+      all_users: "All Users"
   messages:
     admin:
       update:
@@ -33,14 +38,12 @@ en:
     admin:
       subject:
         create: "Create new subject"
-    delete_confirm: "Are you sure?"
-    delete: "Delete"
-    edit: "Edit"      
+      user:
+        create: "Create user"
   dynamic_form:
     add: "Add task"
     remove: "Remove"
   button:
     edit_profile: "Edit Profile"
-  links:
-    logo: "Framgia Training System"
-
+    admin:
+      create: "Create"

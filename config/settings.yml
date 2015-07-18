@@ -1,0 +1,15 @@
+user:
+  name:
+    min_size: 2
+    max_size: 30
+    is_presence: true
+  email:
+    format:
+    max_size: 255
+    is_unique: true
+    is_presence: true
+  password:
+    min_size: 6
+    max_size: 255
+    is_presence: true
+    is_allow_blank: true
