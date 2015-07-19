@@ -34,6 +34,7 @@ en:
       destroy:
         success: "Delele  successfully"
         fail: "Can't delete"
+        confirm: "You sure?"
   buttons:
     admin:
       subject:

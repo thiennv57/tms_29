@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "subjects#index"
     resources :subjects
-    resources :users, only: [:new, :create, :show]
+    resources :users, except: [:edit]
   end
 
   resources :users, only: [:show]
