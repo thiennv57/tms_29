@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 20150716012544) do
   add_index "tasks", ["subject_id"], name: "index_tasks_on_subject_id"
 
   create_table "user_course_subject_tasks", force: :cascade do |t|
-    t.string   "status"
+    t.integer  "status"
     t.integer  "user_course_subject_id"
     t.integer  "task_id"
     t.datetime "created_at",             null: false
@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(version: 20150716012544) do
   add_index "user_course_subject_tasks", ["user_course_subject_id"], name: "index_user_course_subject_tasks_on_user_course_subject_id"
 
   create_table "user_course_subjects", force: :cascade do |t|
-    t.string   "status"
+    t.integer  "status"
     t.integer  "user_course_id"
     t.integer  "subject_id"
     t.datetime "created_at",     null: false
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20150716012544) do
   add_index "user_course_subjects", ["user_course_id"], name: "index_user_course_subjects_on_user_course_id"
 
   create_table "user_courses", force: :cascade do |t|
-    t.string   "status"
+    t.integer  "status"
     t.integer  "user_id"
     t.integer  "course_id"
     t.datetime "created_at", null: false
