@@ -14,6 +14,8 @@ en:
       new_user: "New user"
       show_user: "Show user"
       all_users: "All users"
+    user:
+      edit: "Edit"
   footer:
     home: "Home"
   layouts:
@@ -23,6 +25,8 @@ en:
       User_mangement: "User Management"
       create_new_user: "Create a new user"
       all_users: "All Users"
+    user:
+      edit: "Edit profile"
   messages:
     admin:
       update:
@@ -35,16 +39,20 @@ en:
         success: "Delele  successfully"
         fail: "Can't delete"
         confirm: "You sure?"
+    user:
+      update:
+        success: "Update successfully"
+        fail: "Update fail"
   buttons:
     admin:
       subject:
         create: "Create new subject"
       user:
         create: "Create user"
+    user:
+      edit_profile: "Edit profile"
+      edit_button: "Update"
   dynamic_form:
     add: "Add task"
     remove: "Remove"
-  button:
-    edit_profile: "Edit Profile"
-    admin:
-      create: "Create"
+  error: "error"
