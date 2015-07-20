@@ -1,0 +1,25 @@
+<div class="row">
+  <aside class="col-md-10">
+    <div class="row">
+      <div class="col-md-3">
+        <section>
+          <%= image_tag @user.avatar.url,
+            size: Settings.user.avatar.profile_avatar_size if @user.avatar %>
+        </section>
+      </div>
+      <div class="col-md-4">
+        <section>
+          <h3><%= @user.name %></h3>
+          <p><%= @user.email %></p>
+        </section>
+      </div>
+      <div class="col-md-5">
+        <% if current_user? @user %>
+          <%= link_to t("buttons.user.edit_profile"), edit_user_path(@user),
+            class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+    <hr>
+  </aside>
+</div>

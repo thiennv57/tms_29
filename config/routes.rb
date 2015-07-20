@@ -8,5 +8,5 @@ Rails.application.routes.draw do
     resources :users, except: [:edit]
   end
 
-  resources :users, only: [:show]
+  resources :users, only: [:show, :edit, :update]
 end
