@@ -13,3 +13,4 @@ user:
     max_size: 255
     is_presence: true
     is_allow_blank: true
+per_page: 10

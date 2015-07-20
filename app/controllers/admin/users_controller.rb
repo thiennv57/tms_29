@@ -1,5 +1,9 @@
 class Admin::UsersController < ApplicationController
-  before_action :init_user, only: [:show]
+  before_action :init_user, only: [:show, :destroy]
+
+  def index
+    @users = User.paginate page: params[:page], per_page: Settings.per_page
+  end
 
   def new
     @user = User.new
@@ -13,6 +17,14 @@ class Admin::UsersController < ApplicationController
     else
       flash.now[:danger] = t "messages.admin.create.fail"
       render "new"
+    end
+  end
+
+  def destroy
+    if @user.destroy
+      flash[:success] = t "messages.admin.destroy.success"
+    else
+      flash[:failed] = t "messages.admin.destroy.fail"
     end
   end
 
