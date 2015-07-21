@@ -18,7 +18,6 @@ class Admin::CoursesController < ApplicationController
   end
 
   def show
-    @users = User.all
     @subjects = @course.subjects
   end
 

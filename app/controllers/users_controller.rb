@@ -3,6 +3,11 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :authenticate_user!
 
+  def show
+    @user_course = @user.user_courses.active_course.first
+    @course = @user_course.course
+  end
+  
   def update
     if @user.update user_params
       sign_in @user, bypass: true
