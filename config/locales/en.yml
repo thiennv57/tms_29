@@ -52,6 +52,8 @@ en:
         create: "Create new subject"
       user:
         create: "Create user"
+        set_user_admin: "Admin account"
+        set_user_normal: "Normal account"
       course:
         create: "Create course"
         update: "Update"
@@ -61,17 +63,30 @@ en:
     delete: "Delete"
     edit: "Edit"
     delete_confirm: "Are you sure?"  
+    user:
+      edit_profile: "Edit profile"
+      edit_button: "Update"
+  links:
+    logo: "Framgia Training System"
+    home: "Home"
+    profile: "Profile"
+    log_in: "Log in"
+    admin:
+      users: "Users"
+      delete_user: "Delete user"
+      courses: "Courses"
+      subjects: "Subjects"
+    user:
+      courses: "Courses"
   dynamic_form:
     add: "Add task"
     remove: "Remove"
   error: "error"
- 
-  dynamic_form:
-    add: "Add task"
-    remove: "Remove"
   links:
     logo: "Framgia Training System"
   status:
     unlearned: "Start"
     learning: "Training"
     learned: "Finish"
+  require:
+    require_admin: "Only admin can access that page"
