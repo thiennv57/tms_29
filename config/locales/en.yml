@@ -17,6 +17,7 @@ en:
       course:
         show: "Course detail"
         new: "Create course"
+        edit: "Edit course"
   footer:
     home: "Home"
   layouts:
@@ -57,6 +58,8 @@ en:
       course:
         create: "Create course"
         update: "Update"
+        active: "Active"
+        deactive: "Deactive"
     user:
       edit_profile: "Edit profile"
       edit_button: "Update"

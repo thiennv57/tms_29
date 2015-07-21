@@ -1,0 +1,7 @@
+<h1 class="center"><%= t "layouts.admin.course_mangement" %></h1>
+<h1 class="center"><%= link_to t("buttons.admin.course.create"),
+  new_admin_course_path, class: "btn btn-success" %></h1>
+<ul class="users">
+  <%= render @courses %>
+  <hr>
+</ul>
