@@ -15,4 +15,8 @@ class CourseSubject < ActiveRecord::Base
   def finish_subject
     self.update_attributes status: STATUS[:FINISHED]
   end
+
+  def finished?
+    self.status == STATUS[:FINISHED]
+  end
 end

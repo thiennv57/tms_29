@@ -144,3 +144,56 @@ input {
     font-weight: normal;
   }
 }
+
+.animate
+{
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+}
+
+.action-button
+{
+  position: center;
+  padding: 10px 40px;
+  margin: 10px 10px 10px 10px;
+  float: left;
+  border-radius: 10px;
+  font-family: 'Pacifico', cursive;
+  font-size: 15px;
+  color: #FFF;
+  text-decoration: none;  
+}
+
+.blue
+{
+  background-color: #3498DB;
+  border-bottom: 5px solid #2980B9;
+  text-shadow: 0px -2px #2980B9;
+  display: block;
+}
+
+.red
+{
+  background-color: #E74C3C;
+  border-bottom: 5px solid #BD3E31;
+  text-shadow: 0px -2px #BD3E31;
+}
+
+.gray
+{
+  background-color: #A4A4A4;
+  border-bottom: 5px solid #A4A4A4;
+  text-shadow: 0px -2px #2980B9;
+  display: block;
+}
+
+.action-button:active
+{
+  transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+  border-bottom: 1px solid;
+}
+
+.verticalLine {
+  border-left: solid #ff0000;
+}
