@@ -1,28 +1,6 @@
 <% provide :title, @user.name %>
-<div class="row">
-  <aside class="col-md-10">
-    <div class="row">
-      <div class="col-md-2">
-        <section>
-          <%= gravatar_for @user  %>
-        </section>
-      </div>
-      <div class="col-md-4">
-        <section>
-          <h3><%= @user.name %></h3>
-          <p><%= @user.email %></p>
-        </section>
-      </div>
-      <div class="col-md-6">
-        <%= link_to t("button.edit_profile"), "#",
-          class: "btn btn-primary" %>
-      </div>
-    </div>
-    <hr>
-  </aside>
-</div>
+  <%= render "user_info" %>
 <div><h3><%= @course.name %></h3></div>
-
 <% @user_course.user_course_subjects.each do |user_course_subject| %>
   <div class="row">
     <hr>

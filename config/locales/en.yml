@@ -18,6 +18,8 @@ en:
         show: "Course detail"
         new: "Create course"
         edit: "Edit course"
+    user:
+      edit: "Edit"
   footer:
     home: "Home"
   layouts:

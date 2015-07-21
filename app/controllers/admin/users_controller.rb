@@ -1,13 +1,8 @@
 class Admin::UsersController < ApplicationController
-  before_action :init_user, only: [:show, :destroy, :update]
   before_action :require_admin
 
   def index
     @users = User.paginate page: params[:page], per_page: Settings.per_page
-  end
-
-  def new
-    @user = User.new
   end
 
   def create
@@ -46,10 +41,6 @@ class Admin::UsersController < ApplicationController
   end
 
   private
-  def init_user
-    @user = User.find params[:id]
-  end
-
   def user_params
     params.require(:user).permit :id, :name, :email, :password, :password_confirmation
   end
