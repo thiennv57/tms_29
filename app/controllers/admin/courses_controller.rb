@@ -1,6 +1,10 @@
 class Admin::CoursesController < ApplicationController
   before_action :init_course, only: [:show, :edit, :update, :destroy]
   
+  def index
+    @courses = current_user.courses
+  end
+
   def new
     @course = Course.new
   end
@@ -27,13 +31,16 @@ class Admin::CoursesController < ApplicationController
     else
       flash[:fail] = t "messages.admin.update.fail"
     end
-    redirect_to admin_course_path @course
+    respond_to do |format|
+      format.html {redirect_to admin_course_path(@course)}
+      format.js
+    end
   end
   
   private
   def course_params
-    params.require(:course).permit :name, :description, subject_ids: []
-  end  
+    params.require(:course).permit :name, :description, :active, subject_ids: []
+  end
 
   def init_course
     @course = Course.find params[:id]

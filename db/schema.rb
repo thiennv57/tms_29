@@ -37,8 +37,9 @@ ActiveRecord::Schema.define(version: 20150716012544) do
   create_table "courses", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "active",      default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -80,11 +81,11 @@ ActiveRecord::Schema.define(version: 20150716012544) do
   add_index "user_course_subjects", ["user_course_id"], name: "index_user_course_subjects_on_user_course_id"
 
   create_table "user_courses", force: :cascade do |t|
-    t.integer  "status"
+    t.boolean  "status",     default: false
     t.integer  "user_id"
     t.integer  "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   add_index "user_courses", ["course_id"], name: "index_user_courses_on_course_id"
