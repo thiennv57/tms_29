@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :init_user, only: [:show, :edit, :update]
   before_action :correct_user, only: [:edit, :update]
   before_action :authenticate_user!
 
@@ -7,7 +6,7 @@ class UsersController < ApplicationController
     @user_course = @user.user_courses.active_course.first
     @course = @user_course.course
   end
-  
+
   def update
     if @user.update user_params
       sign_in @user, bypass: true
@@ -20,10 +19,6 @@ class UsersController < ApplicationController
   end
 
   private
-  def init_user
-    @user = User.find params[:id]
-  end
-
   def user_params
     params.require(:user).permit :id, :name, :email,
       :avatar, :password, :password_confirmation
