@@ -3,6 +3,9 @@ class Admin::UsersController < ApplicationController
 
   def index
     @users = User.paginate page: params[:page], per_page: Settings.per_page
+    @q = User.ransack params[:q]
+    @users = @q.result distinct: true
+    @q.build_sort if @q.sorts.empty?
   end
 
   def create

@@ -4,6 +4,9 @@ class Admin::SubjectsController < ApplicationController
   def index
     @subject = Subject.new
     @subjects = Subject.all
+    @q = Subject.ransack params[:q]
+    @subjects = @q.result distinct: true
+    @q.build_sort if @q.sorts.empty?
   end
 
   def create

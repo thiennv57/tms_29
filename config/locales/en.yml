@@ -29,6 +29,7 @@ en:
       yser_mangement: "User Management"
       create_new_user: "Create a new user"
       all_users: "All Users"
+      sort_by: "Sort by"
     user:
       edit: "Edit profile"
     course: 
@@ -62,6 +63,7 @@ en:
         update: "Update"
         active: "Active"
         deactive: "Deactive"
+      search: "Search"
     user:
       edit_profile: "Edit profile"
       edit_button: "Update"
