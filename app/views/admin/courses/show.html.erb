@@ -1,7 +1,13 @@
 <h1><%= t "titles.admin.course.show" %></h1>
-<h3><div><%= @course.name %></div></h3>
-<div><%= @course.description %></div>
-<% @subjects.each do |subject| %>
-  <div><%= subject.name %></div> 
+<h4><b><%= t "tilte.admin.course.subject_list" %></b></h4>
+<% @course.course_subjects.each do |course_subject| %>
+  <div class="row">
+    <hr>
+    <div class="col-md-2">
+      <b><%= course_subject.subject.name %></b>
+      <br>
+      <%= course_subject.subject.description %>
+    </div>
+    <%= render "status_subject", course_subject: course_subject %>
+  </div>    
 <% end %>
-

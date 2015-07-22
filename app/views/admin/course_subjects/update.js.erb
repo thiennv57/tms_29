@@ -1,0 +1,3 @@
+$("#start-<%= @course_subject.id %>").
+  html("<%= escape_javascript render "admin/courses/status_subject", 
+  course_subject: @course_subject %>");
