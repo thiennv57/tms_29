@@ -3,6 +3,9 @@ class Admin::CoursesController < ApplicationController
   
   def index
     @courses = current_user.courses
+    @q = Course.ransack params[:q]
+    @courses = @q.result distinct: true
+    @q.build_sort if @q.sorts.empty?
   end
 
   def new

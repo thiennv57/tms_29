@@ -2,6 +2,9 @@
 <h1 class="center"><%= link_to t("buttons.admin.course.create"),
   new_admin_course_path, class: "btn btn-success" %></h1>
 <ul class="users">
-  <%= render @courses %>
+  <%= render "shared/search_form" %>
+  <div id="courses">
+    <%= render @courses %>
+  </div>
   <hr>
 </ul>

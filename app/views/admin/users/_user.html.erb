@@ -9,12 +9,12 @@
   <div class="col-md-2">
     <%= form_for [:admin, user], remote: true do |f| %>
       <%= f.hidden_field :admin, value: !user.admin %>
-      <%= f.submit user.admin? ? t("buttons.admin.user.set_user_normal") : t("buttons.admin.user.set_user_admin"),
-        class: "btn btn-danger" %>
+      <%= f.submit user.admin? ? t("buttons.admin.user.set_user_normal")
+        : t("buttons.admin.user.set_user_admin"), class: "btn btn-primary" %>
     <% end %>
   </div>
-  <div class="col-md-3">
-    <%= link_to "delete", admin_user_path(user), method: :delete, remote: true,
-      data: {confirm: t("messages.admin.destroy.confirm")} %>
+  <div class="col-md-3 center">
+    <%= link_to t("admin.delete"), admin_user_path(user), method: :delete, remote: true,
+      data: {confirm: t("messages.admin.destroy.confirm")} , class: "btn btn-danger" %>
   </div>
 </div>

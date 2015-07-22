@@ -1,7 +1,14 @@
 <% provide :title, t("titles.admin.all_users") %>
-<h1 class="center"><%= t "layouts.admin.all_users" %></h1>
-<h1 class="center"><%= link_to t("buttons.admin.user.create"), new_admin_user_path, class: "btn btn-success" %></h1>
+<h1 class="center">
+  <%= t "layouts.admin.all_users" %>
+</h1>
+<h1 class="center">
+  <%= link_to t("buttons.admin.user.create"), new_admin_user_path,
+    class: "btn btn-success" %>
+</h1>
+<br>
 <ul class="users">
-  <%= render @users %>
+  <%= render "shared/search_form" %>
+  <div id="users"><%= render @users %></div>
   <hr>
 </ul>

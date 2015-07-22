@@ -19,6 +19,7 @@ gem "mini_magick",             "3.8.0"
 gem "fog",                     "1.23.0"
 gem "devise"
 gem "cancancan"
+gem "ransack"
 
 group :development, :test do
   gem "byebug", "3.4.0"

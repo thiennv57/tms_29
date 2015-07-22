@@ -1,0 +1,22 @@
+<%= search_form_for [:admin, @q], method: :get, remote: :true do |f| %>
+  <div class="row">
+    <div class="col-md-5">
+      <%= f.search_field :name_cont, class: "form-control"%>
+    </div>
+    <div class="col-md-1">
+      <b class="text-info"><%= t "layouts.admin.sort_by" %></b>
+    </div>
+    <div class="col-md-3">
+      <%= f.sort_fields do |s| %>
+        <%= s.sort_select %>
+      <% end %>
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-success">
+        <span class="glyphicon glyphicon-search">
+          <%= t "buttons.admin.search" %>
+        </span>
+      </button>
+    </div>
+  </div>
+<% end %>
