@@ -1,0 +1,26 @@
+<%= provide :title, t("titles.admin.dashboard").titleize %>
+<h1><%= t "layouts.admin.admin_dashboard" %></h1>
+<hr>
+<div class="row">
+  <div class="col-md-3">
+    <h2 class="text-success"><%= t "layouts.admin.users" %></h2>
+    <a href="<%= admin_users_path %>">
+      <span class="glyphicon glyphicon-user dashboard"></span>
+      <%= @users_length %>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <h2 class="text-success"><%= t "layouts.admin.courses" %></h2>
+    <a href="<%= admin_courses_path %>">
+      <span class="glyphicon glyphicon-book dashboard"></span>
+      <%= @courses_length %>
+    </a>
+  </div>
+  <div class="col-md-3">
+    <h2 class="text-success"><%= t "layouts.admin.subjects" %></h2>
+    <a href="<%= admin_subjects_path %>">
+      <span class="glyphicon glyphicon-list-alt dashboard"></span>
+      <%= @subjects_length %>
+    </a>
+  </div>
+</div>

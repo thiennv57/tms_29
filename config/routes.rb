@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "static_pages#home"
 
   namespace :admin do
-    root "subjects#index"
+    root "dashboard#index"
     resources :subjects
     resources :users, except: [:edit]
     resources :courses
@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :edit, :update]
   resources :courses do
     resources :subjects, only: :show
+  end
   resources :users do
     resources :courses, only: [:show]
   end
