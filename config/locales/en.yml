@@ -29,6 +29,7 @@ en:
       create_new_user: "Create a new user"
       all_users: "All Users"
       sort_by: "Sort by"
+      assign_user: "Assign users to course"
     user:
       edit: "Edit profile"
     course:
@@ -41,6 +42,8 @@ en:
         status: "Status"
       instruction: "Instruction"
       activity_log: "Activity Log"
+    course: 
+      course_detail:"Course details"
   messages:
     admin:
       update:
@@ -74,6 +77,7 @@ en:
         active: "Active"
         deactive: "Deactive"
       search: "Search"
+      assign_users: Assign users
     user:
       edit_profile: "Edit profile"
       edit_button: "Update"

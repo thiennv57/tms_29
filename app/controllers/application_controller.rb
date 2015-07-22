@@ -2,9 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include UsersHelper
   before_action :clear_search_index, only: [:index]
-  
-  load_and_authorize_resource except: [:home, :help, :about, :contact], unless: :devise_controller?
-  
+
   private
   def require_admin
     unless current_user.admin?

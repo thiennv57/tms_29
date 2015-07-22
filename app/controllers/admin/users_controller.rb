@@ -8,11 +8,15 @@ class Admin::UsersController < ApplicationController
     @q.build_sort if @q.sorts.empty?
   end
 
+  def new 
+    @user = User.new
+  end
+
   def create
     @user = User.new user_params
     if @user.save
       flash[:success] = t "messages.admin.create.success"
-      redirect_to admin_user_path @user
+      redirect_to admin_root_url
     else
       flash.now[:failed] = t "messages.admin.create.fail"
       render :new

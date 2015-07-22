@@ -3,8 +3,12 @@
   <div class="col-md-3">
     <b><%= link_to course.name, admin_course_path(course) %></b>
   </div>
-  <div class="col-md-3">
+  <div class="col-md-2">
     <b><%= link_to t("buttons.edit"), edit_admin_course_path(course) %></b>
+  </div>
+  <div class="col-md-2">
+    <%= link_to t("buttons.admin.course.assign_users"), edit_admin_course_assign_users_path(course),
+      class: "btn btn-primary" %>
   </div>
   <div class="col-md-2">
     <%= form_for [:admin, course], remote: true do |f| %>

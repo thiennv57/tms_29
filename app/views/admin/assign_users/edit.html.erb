@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h2 class="text-success center"><%= @course.name %></h2>
+    <h4 class="center"><%= @course.description %></h4>
+    <hr>
+    <%= form_for [:admin, @course], url: admin_course_assign_users_path, method: :patch do |f| %>
+      <%= hidden_field_tag "course[user_ids][]", nil %>
+      <ol>
+        <% @users.each do |user| %>
+          <%= f.label :user_ids, class: "checkbox inline" do %>
+            <%= f.check_box :user_ids, {name: "course[user_ids][]",
+              checked: @course.users.include?(user)}, user.id, nil %>
+            <li><span><%= user.name %></span></li>
+          <% end %>
+        <% end %>
+      </ol>
+      <%= f.submit t("buttons.admin.course.update"), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
