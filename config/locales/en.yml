@@ -18,7 +18,7 @@ en:
         show: "Course detail"
         new: "Create course"
         edit: "Edit course"
-        subject_list: "Subject list"    
+        subject_list: "Subject list"
       dashboard: "Dashboard"
     user:
       edit: "Edit"
@@ -39,8 +39,7 @@ en:
       subjects: "Subjects"
     user:
       edit: "Edit profile"
-    course:
-      course_detail:"Course details"
+      activity: "Activity Feed"
     subject:
       info:
         title: "Basic information"
@@ -49,8 +48,10 @@ en:
         status: "Status"
       instruction: "Instruction"
       activity_log: "Activity Log"
-    course: 
-      course_detail:"Course details"
+    course:
+      info:
+        start: "Start date"
+      course_detail: "Course details"
   messages:
     admin:
       update:
@@ -92,6 +93,8 @@ en:
     delete: "Delete"
     edit: "Edit"
     delete_confirm: "Are you sure?"
+    hide: "Hide"
+    show: "Show"
   links:
     logo: "Framgia Training System"
     home: "Home"
@@ -108,8 +111,6 @@ en:
     add: "Add task"
     remove: "Remove"
   error: "error"
-  links:
-    logo: "Framgia Training System"
   status:
     unlearned: "Start"
     learning: "Training"
