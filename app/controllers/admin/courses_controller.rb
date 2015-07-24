@@ -24,6 +24,18 @@ class Admin::CoursesController < ApplicationController
     end
   end
 
+  def destroy
+    if @course.destroy
+      flash.now[:success] = t "messages.admin.destroy.success"
+    else
+      flash.now[:failed] = t "messages.admin.destroy.fail"
+    end
+    respond_to do |format|
+      format.html {redirect_to admin_course_path(@course)}
+      format.js
+    end
+  end
+  
   def show
     @subjects = @course.subjects
   end
