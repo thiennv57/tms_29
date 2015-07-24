@@ -20,7 +20,7 @@ user:
     unit: MB
     accepted_format: image/jpeg,image/gif,image/png
     store_dir: "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-    extension_white_list: 
+    extension_white_list:
       - jpg
       - jpeg
       - gif
@@ -34,3 +34,5 @@ status:
   inactive: 0
   active: 1
   finish: 2
+  finished: 1
+format_date: "%Y/%m/%d"

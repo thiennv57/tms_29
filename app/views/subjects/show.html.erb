@@ -1,0 +1,21 @@
+<% provide :title, @subject.name %>
+<h1><%= @subject.name %></h1>
+<% @subject.tasks.each do |task| %>
+  <%= task.name %>
+<% end %>
+<h2><%= t "layouts.subject.info.title" %></h2>
+<h5>
+  <%= t "layouts.subject.info.start" + ": " %>
+  <%= @user_course_subject.created_at.strftime(Settings.format_date) %>
+</h5>
+<h5>
+  <%= t "layouts.subject.info.end" + ": " %>
+  <%= @user_course_subject.updated_at.strftime(Settings.format_date) %>
+</h5>
+<h5>
+  <%= t "layouts.subject.info.status" + ": " %>
+  <%= @user_course_subject.status == Settings.status.finished ? t("status.finished") : t("status.incomplete") %>
+</h5>
+<h2><%= t "layouts.subject.instruction" %></h2>
+<h5><%= @subject.description %></h5>
+<h2><%= t "layouts.subject.activity_log" %></h2>
