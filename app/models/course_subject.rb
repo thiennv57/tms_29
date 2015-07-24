@@ -4,7 +4,6 @@ class CourseSubject < ActiveRecord::Base
 
   STATUS = {UNSTART: "unstart", STARTED: "started", FINISHED: "finished"}
 
-  private
   def start_subject course
     self.update_attributes status: STATUS[:STARTED]
     course.user_courses.each do |user_course|

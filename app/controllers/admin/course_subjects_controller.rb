@@ -4,9 +4,9 @@ class Admin::CourseSubjectsController < ApplicationController
   def update
     case params[:status]
     when CourseSubject::STATUS[:STARTED]
-      @course_subject.send(:start_subject, @course_subject.course)
+      @course_subject.start_subject @course_subject.course
     when CourseSubject::STATUS[:FINISHED]
-      @course_subject.send(:finish_subject)
+      @course_subject.finish_subject
     end
     respond_to do |format|
       format.html {redirect_to admin_course_path(@course_subject.course)}

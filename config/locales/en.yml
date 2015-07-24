@@ -65,7 +65,7 @@ en:
         confirm: "You sure?"
     user:
       update:
-        success: "Update successfully"
+        success: "Updated successfully"
         fail: "Update fail"
   buttons:
     admin:
@@ -88,12 +88,10 @@ en:
     user:
       edit_profile: "Edit profile"
       edit_button: "Update"
+      update: "Update"
     delete: "Delete"
     edit: "Edit"
     delete_confirm: "Are you sure?"
-    user:
-      edit_profile: "Edit profile"
-      edit_button: "Update"
   links:
     logo: "Framgia Training System"
     home: "Home"
@@ -118,5 +116,6 @@ en:
     learned: "Finish"
     finished: "Finished"
     incomplete: "Not finished"
+    finish: "Finish"
   require:
     require_admin: "Only admin can access that page"

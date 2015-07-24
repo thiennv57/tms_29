@@ -1,7 +1,17 @@
 <% provide :title, @subject.name %>
 <h1><%= @subject.name %></h1>
-<% @subject.tasks.each do |task| %>
-  <%= task.name %>
+<%= form_for @user_course_subject, url: course_subject_path do |f| %>
+  <div class = "row">
+    <%= f.fields_for :user_course_subject_tasks do |ff| %>
+      <div class = "col-md-1">
+        <%= ff.object.task.name %>
+        <%= ff.hidden_field :task_id, value: ff.object.task.id %>
+        <%= ff.check_box :status %>
+        <%= ff.label :status, t("status.finish") %>
+      </div>
+    <% end %>
+  </div>
+  <%= f.submit t("buttons.user.update"), class: "btn btn-primary" %>
 <% end %>
 <h2><%= t "layouts.subject.info.title" %></h2>
 <h5>
