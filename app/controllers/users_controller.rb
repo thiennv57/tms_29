@@ -3,8 +3,10 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def show
-    @user_course = @user.user_courses.active_course.first
-    @course = @user_course.course
+    @course = @user.courses.active_course.first
+    unless @course.nil? 
+      @user_course = @user.user_courses.find_by_course_id(@course.id)
+    end
   end
 
   def update

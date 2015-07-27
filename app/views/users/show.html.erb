@@ -1,20 +1,22 @@
 <% provide :title, @user.name %>
   <%= render "user_info" %>
-<div><h3><%= @course.name %></h3></div>
-<% @user_course.user_course_subjects.each do |user_course_subject| %>
-  <div class="row">
-    <hr>
-    <div class="col-md-2">
-      <b><%= user_course_subject.subject.name %></b>
-      <%= user_course_subject.status %>
+<% unless @course.nil? %>   
+  <div><h3><%= @course.name %></h3></div>
+  <% @user_course.user_course_subjects.each do |user_course_subject| %>
+    <div class="row">
+      <hr>
+      <div class="col-md-2">
+        <b><%= user_course_subject.subject.name %></b>
+        <%= user_course_subject.status %>
+      </div>
+      <div class="col-md-10">
+        <% user_course_subject.user_course_subject_tasks.
+          each do |user_course_subject_task| %>
+          <br>
+          <%= user_course_subject_task.task.name %>
+          <%= user_course_subject_task.status %>
+        <% end %>
+      </div>
     </div>
-    <div class="col-md-10">
-      <% user_course_subject.user_course_subject_tasks.
-        each do |user_course_subject_task| %>
-        <br>
-        <%= user_course_subject_task.task.name %>
-        <%= user_course_subject_task.status %>
-      <% end %>
-    </div>
-  </div>
+  <% end %>
 <% end %>
