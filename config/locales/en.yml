@@ -19,6 +19,9 @@ en:
         new: "Create course"
         edit: "Edit course"
         subject_list: "Subject list"    
+      dashboard: "Dashboard"
+    user:
+      edit: "Edit"
   footer:
     home: "Home"
   layouts:
@@ -30,6 +33,10 @@ en:
       all_users: "All Users"
       sort_by: "Sort by"
       assign_user: "Assign users to course"
+      admin_dashboard: "Admin | Dashboard"
+      users: "Users"
+      courses: "Courses"
+      subjects: "Subjects"
     user:
       edit: "Edit profile"
     course:
