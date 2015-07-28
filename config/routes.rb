@@ -11,8 +11,10 @@ Rails.application.routes.draw do
       match "/:status" => "course_subjects#update", as: :status,
       via: :put, constraints: {status: /(started|finished)/}
     end 
+    resources :courses do
+      resource :assign_users, only: [:edit, :update]
+    end
   end
-
   resources :users, only: [:show, :edit, :update]
   resources :courses do
     resources :subjects, only: :show

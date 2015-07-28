@@ -36,3 +36,7 @@ status:
   finish: 2
   finished: 1
 format_date: "%Y/%m/%d"
+user_course:
+  true: t
+  false: f
+

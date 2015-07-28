@@ -2,7 +2,7 @@ class Admin::CoursesController < ApplicationController
   before_action :init_course, only: [:show, :edit, :update, :destroy]
   
   def index
-    @courses = current_user.courses
+    @courses = Course.paginate page: params[:page], per_page: Settings.per_page
     @q = Course.ransack params[:q]
     @courses = @q.result distinct: true
     @q.build_sort if @q.sorts.empty?
@@ -34,6 +34,11 @@ class Admin::CoursesController < ApplicationController
       format.html {redirect_to admin_course_path(@course)}
       format.js
     end
+  end
+
+  def show
+    @subjects = @course.subjects
+    @users = @course.users
   end
 
   def update
