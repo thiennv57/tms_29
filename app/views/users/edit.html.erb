@@ -18,12 +18,10 @@
       </div>
       <br>
       <div class="row">
-        <div class="col-md-5">
-          <%= gravatar_for @user, size: Settings.user.avatar.image_size_edit %> 
-        </div>
+  
         <div class="col-md-7">
           <span class="picture">
-            <%= f.file_field :picture, accept: Settings.image_type_accept,
+            <%= f.file_field :avatar, accept: Settings.image_type_accept,
               onchange: "PreviewImage('user_image');" %>
           </span>
         </div>

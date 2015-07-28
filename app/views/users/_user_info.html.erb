@@ -1,7 +1,7 @@
 <div class="row">
   <aside class="col-md-10">
     <div class="row">
-      <div class="col-md-3">
+      <div class="col-md-4">
         <section>
           <%= image_tag @user.avatar.url,
             size: Settings.user.avatar.profile_avatar_size if @user.avatar %>
@@ -13,7 +13,7 @@
           <p><%= @user.email %></p>
         </section>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-4">
         <% if can? :update, @user %>
           <%= link_to t("buttons.user.edit_profile"), edit_user_path(@user),
             class: "btn btn-primary" %>

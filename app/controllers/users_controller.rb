@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :authenticate_user!
+  load_and_authorize_resource
 
   def show
     @course = @user.courses.active_course.first

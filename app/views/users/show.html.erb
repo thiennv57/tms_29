@@ -1,6 +1,6 @@
 <% provide :title, @user.name %>
   <%= render "user_info" %>
-<% unless @course.nil? %>   
+<% unless @course.nil? %>
   <div><h3><%= @course.name %></h3></div>
   <% @user_course.user_course_subjects.each do |user_course_subject| %>
     <div class="row">
