@@ -16,7 +16,18 @@
         <%= f.label :password_confirmation %><br>
         <%= f.password_field :password_confirmation, class: "form-control" %>
       </div>
-      <%= f.file_field :avatar, accept: Settings.user.avatar.accepted_format %>
+      <br>
+      <div class="row">
+        <div class="col-md-5">
+          <%= gravatar_for @user, size: Settings.user.avatar.image_size_edit %> 
+        </div>
+        <div class="col-md-7">
+          <span class="picture">
+            <%= f.file_field :picture, accept: Settings.image_type_accept,
+              onchange: "PreviewImage('user_image');" %>
+          </span>
+        </div>
+      </div>
       <br>
       <%= f.submit t("buttons.user.edit_button"), class: "btn btn-primary pull-right" %>
     <% end %>
