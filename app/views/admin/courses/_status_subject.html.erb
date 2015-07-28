@@ -1,0 +1,22 @@
+<div class="col-md-10" id="start-<%= course_subject.id %>">
+  <% case course_subject.status %>
+  <% when CourseSubject::STATUS[:UNSTART] %>
+    <div class="col-md-2">
+      <%= link_to t("buttons.admin.subject.start"), 
+        admin_course_subject_status_path(course_subject, 
+          status: CourseSubject::STATUS[:STARTED]), 
+        method: :put, class: "btn btn-danger" %>
+    </div>
+  <% when CourseSubject::STATUS[:STARTED] %>  
+    <div class="col-md-2">
+     <%= link_to t("buttons.admin.subject.finish"), 
+        admin_course_subject_status_path(course_subject, 
+          status: CourseSubject::STATUS[:FINISHED]), 
+        method: :put, class: "btn btn-danger" %>
+    </div>
+  <% when CourseSubject::STATUS[:FINISHED] %>
+    <div class="col-md-2">
+      <%= link_to t("buttons.admin.subject.finished"), "#", class: "btn btn-danger" %>
+    </div>
+  <% end %>
+</div>

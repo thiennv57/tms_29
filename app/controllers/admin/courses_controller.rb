@@ -35,10 +35,6 @@ class Admin::CoursesController < ApplicationController
       format.js
     end
   end
-  
-  def show
-    @subjects = @course.subjects
-  end
 
   def update
     if @course.update_attributes course_params

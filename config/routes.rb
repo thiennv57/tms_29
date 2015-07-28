@@ -7,6 +7,10 @@ Rails.application.routes.draw do
     resources :subjects
     resources :users, except: [:edit]
     resources :courses
+    resources :course_subjects do
+      match "/:status" => "course_subjects#update", as: :status,
+      via: :put, constraints: {status: /(started|finished)/}
+    end 
   end
 
   resources :users, only: [:show, :edit, :update]

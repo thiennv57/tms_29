@@ -3,7 +3,8 @@ class CreateCourseSubjects < ActiveRecord::Migration
     create_table :course_subjects do |t|
       t.references :course, index: true, foreign_key: true
       t.references :subject, index: true, foreign_key: true
-
+      t.string :status, default: "unstart"
+      
       t.timestamps null: false
     end
   end

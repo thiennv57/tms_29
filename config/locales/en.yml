@@ -18,8 +18,7 @@ en:
         show: "Course detail"
         new: "Create course"
         edit: "Edit course"
-    user:
-      edit: "Edit"
+        subject_list: "Subject list"    
   footer:
     home: "Home"
   layouts:
@@ -62,6 +61,9 @@ en:
     admin:
       subject:
         create: "Create new subject"
+        start: "start"
+        finish: "finish"
+        finished: "finished"
       user:
         create: "Create user"
         set_user_admin: "Admin account"
