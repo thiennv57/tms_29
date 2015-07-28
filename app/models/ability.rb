@@ -7,6 +7,7 @@ class Ability
       can :manage, :all
     else
       can [:edit, :update, :show], User, id: user.id
+      can [:show], [User, Course]
     end
   end
 end

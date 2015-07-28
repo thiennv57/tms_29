@@ -1,0 +1,40 @@
+<% unless @course.nil? %>
+  <div class="row">
+    <div class="col-md-6 col-md-offset-2">
+      <div class="row">
+        <div class="col-md-6 col-md-offset-4">
+          <h1 class="text-danger"><%= @course.name %></h1>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-12 col-md-offset-2 center">
+          <% @course_subjects.each do |course_subject| %>
+            <% if course_subject.finished? %>
+              <%= link_to course_subject.subject.name, user_course_subject_path(@user,@course,@subject),
+                class: "action-button shadow animate gray" %>
+            <% else %>
+              <%= link_to course_subject.subject.name, user_course_subject_path(@user,@course,@subject),
+                class: "action-button shadow animate blue" %>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-md-8 col-md-offset-2 center">
+          <p><%= @course.description %></p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 verticalLine">
+      <h1 class="text-danger">Members in course</h1>
+      <% @users.each do |user| %>
+        <% unless user.admin? %>
+          <%= link_to user.name, user_path(user.id) %>
+          <br>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
