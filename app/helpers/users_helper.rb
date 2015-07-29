@@ -3,7 +3,7 @@ module UsersHelper
     gravatar_id = Digest::MD5::hexdigest user.email.downcase
     size = options[:size]
     gravatar_url = if user.avatar? 
-      user.picture.url
+      user.avatar.url
     else 
       "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}" 
     end

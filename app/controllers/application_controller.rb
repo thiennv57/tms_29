@@ -3,12 +3,19 @@ class ApplicationController < ActionController::Base
   include UsersHelper
   before_action :clear_search_index, only: [:index]
 
-  private
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:alert] = exception.message
+    redirect_to root_url
+  end
+  
+  protected
+  def after_sign_in_path_for resource
+    current_user.admin? ? admin_root_path : root_path
+  end
+
   def require_admin
-    unless current_user.admin?
-      flash[:danger] = t "require.require_admin"
-      redirect_to root_path
-    end
+    authenticate_user!
+    redirect_to root_path unless current_user.admin?
   end
   
   def clear_search_index
