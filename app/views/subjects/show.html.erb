@@ -1,17 +1,23 @@
 <% provide :title, @subject.name %>
 <h1><%= @subject.name %></h1>
 <%= form_for @user_course_subject, url: course_subject_path do |f| %>
-  <div class = "row">
+  <div class="row">
+    <aside class="col-md-10 col-md-offset-1">
     <%= f.fields_for :user_course_subject_tasks do |ff| %>
-      <div class = "col-md-1">
+      <aside class="col-md-1">
         <%= ff.object.task.name %>
         <%= ff.hidden_field :task_id, value: ff.object.task.id %>
         <%= ff.check_box :status %>
         <%= ff.label :status, t("status.finish") %>
-      </div>
+      </aside>
     <% end %>
+    </aside>
   </div>
-  <%= f.submit t("buttons.user.update"), class: "btn btn-primary" %>
+  <div class = "row">
+    <aside class="col-md-2 col-md-offset-5">
+      <%= f.submit t("buttons.user.update"), class: "btn btn-primary" %>
+    </aside>
+  </div>
 <% end %>
 <h2><%= t "layouts.subject.info.title" %></h2>
 <h5>
@@ -26,6 +32,10 @@
   <%= t "layouts.subject.info.status" + ": " %>
   <%= @user_course_subject.status == Settings.status.finished ? t("status.finished") : t("status.incomplete") %>
 </h5>
-<h2><%= t "layouts.subject.instruction" %></h2>
-<h5><%= @subject.description %></h5>
+<h2>
+  <%= t "layouts.subject.instruction" %>
+</h2>
+<div id="instruction">
+  <h5><%= @subject.description %></h5>
+</div>
 <h2><%= t "layouts.subject.activity_log" %></h2>
