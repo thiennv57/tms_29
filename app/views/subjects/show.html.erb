@@ -15,6 +15,11 @@
   </div>
   <div class = "row">
     <aside class="col-md-2 col-md-offset-5">
+      <br>
+      <%= f.label :status, class: "checkbox inline" do %>
+        <%= t "layouts.subject.finish_subject" %>
+        <%= f.check_box :status %>
+      <% end %>
       <%= f.submit t("buttons.user.update"), class: "btn btn-primary" %>
     </aside>
   </div>

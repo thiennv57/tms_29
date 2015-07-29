@@ -8,7 +8,7 @@ class Admin::UsersController < ApplicationController
     @q.build_sort if @q.sorts.empty?
   end
 
-  def new 
+  def new
     @user = User.new
   end
 

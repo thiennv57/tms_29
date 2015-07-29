@@ -58,6 +58,12 @@
     </aside>
     <aside class="col-md-4">
       <h3 class="center"><%= t "layouts.user.activity" %></h3>
+      <% @activities.each do |activity| %>
+        <div class="row col-md-offset-1">
+          <%= activity.display %>
+          <%= time_ago_in_words activity.created_at %>
+        </div>
+      <% end %>
     </aside>
   </div>
 <% end %>
