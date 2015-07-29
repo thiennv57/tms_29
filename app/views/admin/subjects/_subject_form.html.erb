@@ -8,9 +8,10 @@
   <table>
     <%= f.fields_for :tasks do |builder| %>
       <%= render "task_fields", f: builder %>
-    <% end %> 
+    <% end %>
   </table>
 
   <p><%= link_to_add_fields t("dynamic_form.add"), f, :tasks %></p>
-  <%= f.submit t("buttons.admin.subject.create"), class: "btn btn-primary" %>
+  <%= f.submit (f.object.new_record? ? t("buttons.admin.subject.create") :
+    t("buttons.admin.subject.update")), class: "btn btn-primary" %>
 <% end %>

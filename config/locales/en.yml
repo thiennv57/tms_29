@@ -57,6 +57,8 @@ en:
       info:
         start: "Start date"
       course_detail: "Course details"
+    search_form:
+      search: "Search..."
   messages:
     admin:
       update:
@@ -80,6 +82,7 @@ en:
         start: "start"
         finish: "finish"
         finished: "finished"
+        update: "Update subject"
       user:
         create: "Create user"
         set_user_admin: "Admin account"
