@@ -14,14 +14,13 @@
 ActiveRecord::Schema.define(version: 20150716012544) do
 
   create_table "activities", force: :cascade do |t|
-    t.string   "content"
-    t.integer  "user_course_subject_id"
+    t.integer  "activity_type"
+    t.integer  "target_id"
     t.integer  "user_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
-  add_index "activities", ["user_course_subject_id"], name: "index_activities_on_user_course_subject_id"
   add_index "activities", ["user_id"], name: "index_activities_on_user_id"
 
   create_table "course_subjects", force: :cascade do |t|

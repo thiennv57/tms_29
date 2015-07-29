@@ -43,6 +43,7 @@ class Admin::CoursesController < ApplicationController
 
   def update
     if @course.update_attributes course_params
+      @course.supervisor_update_course_activity current_user
       flash[:success] = t "messages.admin.update.success"
     else
       flash[:fail] = t "messages.admin.update.fail"

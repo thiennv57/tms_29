@@ -40,4 +40,17 @@ format_date: "%Y/%m/%d"
 user_course:
   true: t
   false: f
+course_subjects:
+  status:
+    unstart: 0  
+    start: 1
+    finish: 2
+activities:
+  supervisor_update_course: 1
+  admin_update_subject: 2
+  supervisor_start_subject: 3
+  supervisor_finish_subject: 4
+  trainee_finish_task: 5
+  supervisor_assign_trainee: 6
+  supervisor_remove_trainee: 7
 

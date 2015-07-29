@@ -20,6 +20,7 @@ class Admin::SubjectsController < ApplicationController
 
   def update
     if @subject.update_attributes subject_params
+      @subject.admin_update_subject_activity current_user
       flash.now[:success] = t "messages.admin.update.success"
     else
       flash.now[:danger] = t "messages.admin.update.fail"
