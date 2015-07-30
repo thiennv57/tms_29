@@ -52,6 +52,7 @@ en:
         status: "Status"
       instruction: "Instruction"
       activity_log: "Activity Log"
+      finish_subject: "Finish Subject"
     course:
       info:
         start: "Start date"
