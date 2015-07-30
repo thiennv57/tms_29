@@ -53,4 +53,4 @@ activities:
   trainee_finish_task: 5
   supervisor_assign_trainee: 6
   supervisor_remove_trainee: 7
-
+  number_activites_show: 10

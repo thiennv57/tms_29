@@ -18,7 +18,11 @@ en:
         show: "Course detail"
         new: "Create course"
         edit: "Edit course"
-        subject_list: "Subject list"
+        subject_list: "Subjects list"
+        activitiy_list: "Activities list"
+        member_list: "Members list"
+      subject:
+        show: "Subject detail"
       dashboard: "Dashboard"
     user:
       edit: "Edit"
@@ -120,3 +124,11 @@ en:
     finish: "Finish"
   require:
     require_admin: "Only admin can access that page"
+  activities:
+    supervisor_update_course: "Supervisor %{user_name} update course %{target_name}"
+    admin_update_subject: "Admin %{user_name} update subject %{target_name}"
+    supervisor_start_subject: "Supervisor %{user_name} start subject %{target_name}"
+    supervisor_finish_subject: "Supervisor %{user_name} finish subject %{target_name}"
+    trainee_finish_task: "Trainee %{user_name} finish task %{target_name}"
+    supervisor_assign_trainee: "Supervisor %{user_name} assign %{target_name} to course"
+    supervisor_remove_trainee: "Supervisor %{user_name} romove %{target_name} from course"
