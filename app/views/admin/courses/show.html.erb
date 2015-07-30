@@ -1,13 +1,39 @@
-<h1><%= t "titles.admin.course.show" %></h1>
-<h4><b><%= t "tilte.admin.course.subject_list" %></b></h4>
-<% @course.course_subjects.each do |course_subject| %>
-  <div class="row">
+<div class="row">
+  <div class="col-md-6">
+    <h1><%= t "titles.admin.course.show" %></h1>
+    <h4><b class="text-success"><%= t "tilte.admin.course.subject_list" %></b></h4>
+    <% @course.course_subjects.each do |course_subject| %>
+      <div class="row">
+        <hr>
+        <div class="col-md-2">
+          <b><%= link_to course_subject.subject.name, 
+            admin_subject_path course_subject.subject %></b>
+          <br>
+          <%= course_subject.subject.description %>
+        </div>
+        <%= render "status_subject", course_subject: course_subject %>
+      </div>
+    <% end %>
     <hr>
-    <div class="col-md-2">
-      <b><%= course_subject.subject.name %></b>
-      <br>
-      <%= course_subject.subject.description %>
-    </div>
-    <%= render "status_subject", course_subject: course_subject %>
-  </div>    
-<% end %>
+    <h4><b class="text-success"><%= t "tilte.admin.course.member_list" %></b></h4>
+    <% @users.each do |user| %>
+      <div>
+        <%= link_to user.name, user %>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-md-1">
+    <div class="verticalLine"></div>
+  </div>
+  <div class="col-md-5">
+    <h4><b class="text-success"><%= t "tilte.admin.course.activitiy_list" %></b></h4>
+    <% @activities.each do |activity| %>
+      <div>
+        <%= activity.display %>
+        <span class="small text-info">
+          <%= time_ago_in_words activity.created_at %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+</div>

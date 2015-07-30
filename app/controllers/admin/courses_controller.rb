@@ -39,6 +39,8 @@ class Admin::CoursesController < ApplicationController
   def show
     @subjects = @course.subjects
     @users = @course.users
+    @activities = Activity.activities_by_user_ids(@users.pluck :id).
+      limit(Settings.activities.number_activites_show).recent.decorate
   end
 
   def update

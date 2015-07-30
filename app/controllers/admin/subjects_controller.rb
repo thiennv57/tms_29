@@ -9,6 +9,10 @@ class Admin::SubjectsController < ApplicationController
     @q.build_sort if @q.sorts.empty?
   end
 
+  def show
+    @tasks = @subject.tasks
+  end
+
   def create
     @subject = Subject.new subject_params
     if @subject.save
