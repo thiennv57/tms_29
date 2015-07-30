@@ -1,4 +1,5 @@
 <% provide :title, @user.name %>
+  <%= javascript_include_tag "show_hide_subjects", "data-turbolinks-track": true %>
   <%= render "user_info" %>
 <% unless @course.nil? %>
   <h3><%= link_to @course.name, course_path(@course) %></h3>
@@ -28,10 +29,7 @@
               <% end %>
             </aside>
             <aside class="col-md-1">
-              <button onclick="hide_subject()"><%= t "buttons.hide" %></button>
-            </aside>
-            <aside class="col-md-1">
-              <button onclick="show_subject()"><%= t "buttons.show" %></button>
+              <button id="toggle-btn"><%= t "buttons.hide" %></button>
             </aside>
             <aside class="col-md-1">
               <% if user_course_subject.finished? %>

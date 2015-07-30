@@ -4,30 +4,19 @@
   <%= form_for @user_course_subject, url: course_subject_path do |f| %>
     <div class="row">
       <aside class="col-md-10 col-md-offset-1">
-      <%= f.fields_for :user_course_subject_tasks do |builder| %>
-        <aside class="col-md-1">
-          <%= builder.object.task.name %>
-          <%= builder.hidden_field :task_id, value: builder.object.task.id %>
-          <%= builder.check_box :status %>
-          <%= builder.label :status, t("status.finish") %>
-        </aside>
-      <% end %>
+        <%= f.fields_for :user_course_subject_tasks do |ff| %>
+          <aside class="col-md-1">
+            <%= ff.object.task.name %>
+            <%= ff.hidden_field :task_id, value: ff.object.task.id %>
+            <%= ff.check_box :status %>
+            <%= ff.label :status, t("status.finish") %>
+          </aside>
+        <% end %>
       </aside>
-    <% end %>
-    </aside>
-  </div>
-  <div class = "row">
-    <aside class="col-md-2 col-md-offset-5">
-      <br>
-      <%= f.label :status, class: "checkbox inline" do %>
-        <%= t "layouts.subject.finish_subject" %>
-        <%= f.check_box :status %>
-      <% end %>
-      <%= f.submit t("buttons.user.update"), class: "btn btn-primary" %>
-    </aside>
     </div>
     <div class = "row">
       <aside class="col-md-2 col-md-offset-5">
+        <br>
         <%= f.submit t("buttons.user.update"), class: "btn btn-primary" %>
       </aside>
     </div>

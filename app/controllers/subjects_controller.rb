@@ -22,6 +22,6 @@ class SubjectsController < ApplicationController
   private
   def user_course_subject_params
     params.require(:user_course_subject)
-      .permit :status, user_course_subject_tasks_attributes: [:id, :status, :task_id]
+      .permit user_course_subject_tasks_attributes: [:id, :status, :task_id]
   end
 end

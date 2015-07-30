@@ -15,19 +15,5 @@
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
-function hide_subject(){
-  $("button").click(function(){
-    $(this).parent().parent().siblings("div").hide();
-  });
-}
 
-function show_subject(){
-  $("button").click(function(){
-    $(this).parent().parent().siblings("div").show();
-  });
-}
 
-$(document).ready(function(){
-  hide_subject();
-  show_subject();
-});
