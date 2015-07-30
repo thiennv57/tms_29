@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     unless @course.nil?
       @user_course = @user.user_courses.find_by_course_id(@course.id)
     end
-    @activities = Activity.all
+    @activities = @user.activities.decorate
   end
 
   def update

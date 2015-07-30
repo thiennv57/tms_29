@@ -10,13 +10,13 @@ class CourseSubject < ActiveRecord::Base
     course.user_courses.each do |user_course|
       self.subject.user_courses << user_course
     end
-    create_activity user.id, self.id, 
+    create_activity user.id, subject.id,
       Settings.activities.supervisor_start_subject
   end
 
   def finish_subject user
     self.update_attributes status: STATUS[:FINISHED]
-    create_activity user.id, self.id, 
+    create_activity user.id, subject.id,
       Settings.activities.supervisor_finish_subject
   end
 

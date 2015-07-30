@@ -42,7 +42,7 @@ user_course:
   false: f
 course_subjects:
   status:
-    unstart: 0  
+    unstart: 0
     start: 1
     finish: 2
 activities:
@@ -54,3 +54,5 @@ activities:
   supervisor_assign_trainee: 6
   supervisor_remove_trainee: 7
   number_activites_show: 10
+  trainee_finish_subject: 11
+  trainee_reopen_subject: 12

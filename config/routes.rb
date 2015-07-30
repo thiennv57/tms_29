@@ -17,7 +17,10 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update]
   resources :courses do
-    resources :subjects, only: [:show, :update]
+    resources :subjects, only: [:show, :update] do
+      match "/:status" => "user_subjects#update", as: :status,
+      via: :put, constraints: {status: /(finish|reopen)/}
+    end
   end
   resources :users do
     resources :courses, only: :show

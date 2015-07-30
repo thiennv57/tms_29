@@ -108,6 +108,8 @@ en:
     home: "Home"
     profile: "Profile"
     log_in: "Log in"
+    finish: "Finish"
+    reopen: "Reopen"
     admin:
       users: "Users"
       delete_user: "Delete user"
@@ -136,3 +138,5 @@ en:
     trainee_finish_task: "Trainee %{user_name} finish task %{target_name}"
     supervisor_assign_trainee: "Supervisor %{user_name} assign %{target_name} to course"
     supervisor_remove_trainee: "Supervisor %{user_name} romove %{target_name} from course"
+    trainee_finish_subject: "Trainee %{user_name} finish subject %{target_name}"
+    trainee_reopen_subject: "Trainee %{user_name} reopen subject %{target_name}"
