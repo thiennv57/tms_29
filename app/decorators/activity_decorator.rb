@@ -23,6 +23,12 @@ class ActivityDecorator < Draper::Decorator
     when Settings.activities.supervisor_assign_trainee
       target = User.find target_id
       display_base_on_type "supervisor_assign_trainee", user, target
+    when Settings.activities.trainee_finish_subject
+      target = Subject.find target_id
+      display_base_on_type "trainee_finish_subject", user, target
+    when Settings.activities.trainee_reopen_subject
+      target = Subject.find target_id
+      display_base_on_type "trainee_reopen_subject", user, target
     else Settings.activities.supervisor_remove_trainee
       target = User.find target_id
       display_base_on_type "supervisor_remove_trainee", user, target

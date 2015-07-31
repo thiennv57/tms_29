@@ -6,8 +6,8 @@
       <div class="row">
         <hr>
         <div class="col-md-2">
-          <b><%= link_to course_subject.subject.name, 
-            admin_subject_path course_subject.subject %></b>
+          <b><%= link_to course_subject.subject.name,
+            admin_subject_path(course_subject.subject) %></b>
           <br>
           <%= course_subject.subject.description %>
         </div>

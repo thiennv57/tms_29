@@ -1,7 +1,7 @@
 <% provide :title, @user.name %>
   <%= render "user_info" %>
 <% unless @course.nil? %>
-  <h3><%= @course.name %></h3>
+  <h3><%= link_to @course.name, course_path(@course) %></h3>
   <%= t "layouts.course.info.start" + ": " %>
   <%= @user_course.created_at.strftime(Settings.format_date) %>
   <span class="label label-success"><%= t "status.learning" %></span>
@@ -16,7 +16,7 @@
               <%= t "layouts.subject.info.start" + ": " %>
               <%= user_course_subject.created_at.strftime(Settings.format_date) %>
             </aside>
-            <aside class="col-md-3 col-md-offset-2">
+            <aside class="col-md-2 col-md-offset-1">
               <% if user_course_subject.status == Settings.status.finished %>
                 <span class="label label-success">
                   <%= t "status.finished" %>
@@ -33,15 +33,24 @@
             <aside class="col-md-1">
               <button onclick="show_subject()"><%= t "buttons.show" %></button>
             </aside>
+            <aside class="col-md-1">
+              <% if user_course_subject.finished? %>
+                <%= link_to t("links.reopen"),
+                  course_subject_status_path(@course, user_course_subject.subject, status: "reopen"), method: :put, class: "btn btn-primary" %>
+              <% else %>
+                <%= link_to t("links.finish"),
+                  course_subject_status_path(@course, user_course_subject.subject, status: "finish"), method: :put, class: "btn btn-primary" %>
+              <% end %>
+            </aside>
           </div>
           <% user_course_subject.user_course_subject_tasks.each do |user_course_subject_task| %>
             <br>
             <div class="row">
-              <aside class="col-md-4 col-md-offset-2">
+              <aside class="col-md-3 col-md-offset-2">
                 <%= user_course_subject_task.task.name %>
               </aside>
               <aside class="col-md-4 col-md-offset-1">
-                <% if user_course_subject_task.status == Settings.status.finished %>
+                <% if user_course_subject_task.finished? %>
                   <span class="label label-success">
                     <%= t "status.finished" %>
                   </span>
@@ -59,7 +68,7 @@
     <aside class="col-md-4">
       <h3 class="center"><%= t "layouts.user.activity" %></h3>
       <% @activities.each do |activity| %>
-        <div class="row col-md-offset-1">
+        <div class="row">
           <%= activity.display %>
           <%= time_ago_in_words activity.created_at %>
         </div>
