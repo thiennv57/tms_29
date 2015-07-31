@@ -1,14 +1,17 @@
-<% provide :title, @subject.name %>
-<h1><%= @subject.name %></h1>
-<%= form_for @user_course_subject, url: course_subject_path do |f| %>
-  <div class="row">
-    <aside class="col-md-10 col-md-offset-1">
-    <%= f.fields_for :user_course_subject_tasks do |ff| %>
-      <aside class="col-md-1">
-        <%= ff.object.task.name %>
-        <%= ff.hidden_field :task_id, value: ff.object.task.id %>
-        <%= ff.check_box :status %>
-        <%= ff.label :status, t("status.finish") %>
+<% unless @subject.nil? %>
+  <% provide :title, @subject.name %>
+  <h1><%= @subject.name %></h1>
+  <%= form_for @user_course_subject, url: course_subject_path do |f| %>
+    <div class="row">
+      <aside class="col-md-10 col-md-offset-1">
+      <%= f.fields_for :user_course_subject_tasks do |builder| %>
+        <aside class="col-md-1">
+          <%= builder.object.task.name %>
+          <%= builder.hidden_field :task_id, value: builder.object.task.id %>
+          <%= builder.check_box :status %>
+          <%= builder.label :status, t("status.finish") %>
+        </aside>
+      <% end %>
       </aside>
     <% end %>
     </aside>
@@ -22,25 +25,31 @@
       <% end %>
       <%= f.submit t("buttons.user.update"), class: "btn btn-primary" %>
     </aside>
+    </div>
+    <div class = "row">
+      <aside class="col-md-2 col-md-offset-5">
+        <%= f.submit t("buttons.user.update"), class: "btn btn-primary" %>
+      </aside>
+    </div>
+  <% end %>
+  <h2><%= t "layouts.subject.info.title" %></h2>
+  <h5>
+    <%= t "layouts.subject.info.start" + ": " %>
+    <%= @user_course_subject.created_at.strftime(Settings.format_date) %>
+  </h5>
+  <h5>
+    <%= t "layouts.subject.info.end" + ": " %>
+    <%= @user_course_subject.updated_at.strftime(Settings.format_date) %>
+  </h5>
+  <h5>
+    <%= t "layouts.subject.info.status" + ": " %>
+    <%= @user_course_subject.status == Settings.status.finished ? t("status.finished") : t("status.incomplete") %>
+  </h5>
+  <h2>
+    <%= t "layouts.subject.instruction" %>
+  </h2>
+  <div id="instruction">
+    <h5><%= @subject.description %></h5>
   </div>
+  <h2><%= t "layouts.subject.activity_log" %></h2>
 <% end %>
-<h2><%= t "layouts.subject.info.title" %></h2>
-<h5>
-  <%= t "layouts.subject.info.start" + ": " %>
-  <%= @user_course_subject.created_at.strftime(Settings.format_date) %>
-</h5>
-<h5>
-  <%= t "layouts.subject.info.end" + ": " %>
-  <%= @user_course_subject.updated_at.strftime(Settings.format_date) %>
-</h5>
-<h5>
-  <%= t "layouts.subject.info.status" + ": " %>
-  <%= @user_course_subject.status == Settings.status.finished ? t("status.finished") : t("status.incomplete") %>
-</h5>
-<h2>
-  <%= t "layouts.subject.instruction" %>
-</h2>
-<div id="instruction">
-  <h5><%= @subject.description %></h5>
-</div>
-<h2><%= t "layouts.subject.activity_log" %></h2>

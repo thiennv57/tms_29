@@ -11,10 +11,10 @@
         <div class="col-md-12 col-md-offset-2 center">
           <% @course_subjects.each do |course_subject| %>
             <% if course_subject.finished? %>
-              <%= link_to course_subject.subject.name, user_course_subject_path(@user,@course,@subject),
+              <%= link_to course_subject.subject.name, course_subject_path(@course,course_subject.subject),
                 class: "action-button shadow animate gray" %>
             <% else %>
-              <%= link_to course_subject.subject.name, user_course_subject_path(@user,@course,@subject),
+              <%= link_to course_subject.subject.name, course_subject_path(@user,course_subject.subject),
                 class: "action-button shadow animate blue" %>
             <% end %>
           <% end %>
