@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :avatar, AvatarUploader
 
+  scope :admins, ->{where admin: true}
   scope :availabe_to_assign, ->course_id{where "id NOT IN (SELECT user_id FROM user_courses 
     WHERE status = 't' AND course_id != ?)", course_id}
 end

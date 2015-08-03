@@ -140,3 +140,5 @@ en:
     supervisor_remove_trainee: "Supervisor %{user_name} romove %{target_name} from course"
     trainee_finish_subject: "Trainee %{user_name} finish subject %{target_name}"
     trainee_reopen_subject: "Trainee %{user_name} reopen subject %{target_name}"
+  notifications:
+    notice_course_status: "The course %{name} will be close after 2 day"
