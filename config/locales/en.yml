@@ -147,3 +147,5 @@ en:
   mailer:
     assigned: "Assigned"
     unassigned: "Unassigned"
+    notice_course_status: "Notice course status"
+    trainee_daily_report_infomation: "Trainee daily report infomation"
