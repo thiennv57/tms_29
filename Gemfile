@@ -21,10 +21,12 @@ gem "devise"
 gem "cancancan"
 gem "ransack"
 gem "draper"
+gem "delayed_job_active_record"
 
 group :development, :test do
   gem "byebug", "3.4.0"
   gem "sqlite3"
   gem "web-console", "~> 2.0"
   gem "spring"
+  gem "letter_opener"
 end

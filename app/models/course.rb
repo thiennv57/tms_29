@@ -11,4 +11,9 @@ class Course < ActiveRecord::Base
     create_activity user.id, self.id, 
       Settings.activities.supervisor_update_course
   end
+
+  def active_course
+    self.update_attributes active: true
+    Delayed::Job.enqueue MailingJob.new(self), run_at: 10.seconds.from_now
+  end
 end

@@ -56,3 +56,5 @@ activities:
   number_activites_show: 10
   trainee_finish_subject: 11
   trainee_reopen_subject: 12
+mail:
+  time_to_notice_supervisor_course_finish: 10

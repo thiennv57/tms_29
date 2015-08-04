@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150716012544) do
+ActiveRecord::Schema.define(version: 20150803072424) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "activity_type"
@@ -38,9 +38,27 @@ ActiveRecord::Schema.define(version: 20150716012544) do
     t.string   "name"
     t.string   "description"
     t.boolean  "active",      default: false
+    t.datetime "active_at"
+    t.integer  "day_word"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
+
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name"
@@ -81,7 +99,7 @@ ActiveRecord::Schema.define(version: 20150716012544) do
   add_index "user_course_subjects", ["user_course_id"], name: "index_user_course_subjects_on_user_course_id"
 
   create_table "user_courses", force: :cascade do |t|
-    t.boolean  "status",     default: true
+    t.boolean  "status",     default: false
     t.integer  "user_id"
     t.integer  "course_id"
     t.datetime "created_at",                 null: false

@@ -1,0 +1,2 @@
+$("#course-<%= @course.id%>").
+  html("<%= escape_javascript(render "admin/courses/course", course: @course) %>");

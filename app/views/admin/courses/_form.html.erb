@@ -4,6 +4,9 @@
 
   <%= f.label :description %>
   <%= f.text_field :description %>
+
+  <%= f.label :day_word %>
+  <%= f.text_field :day_word %>
   <%= hidden_field_tag "course[subject_ids][]", nil %>
   <% Subject.all.each do |subject| %>
     <%= f.label :subject_ids, class: "checkbox inline" do %>
