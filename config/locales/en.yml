@@ -142,3 +142,8 @@ en:
     trainee_reopen_subject: "Trainee %{user_name} reopen subject %{target_name}"
   notifications:
     notice_course_status: "The course %{name} will be close after 2 day"
+    notice_assign_trainee: "You assigned course:"
+    notice_unassign_trainee: "You unassigned course:"
+  mailer:
+    assigned: "Assigned"
+    unassigned: "Unassigned"

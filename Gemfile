@@ -22,6 +22,7 @@ gem "cancancan"
 gem "ransack"
 gem "draper"
 gem "delayed_job_active_record"
+gem "sidekiq"
 
 group :development, :test do
   gem "byebug", "3.4.0"
