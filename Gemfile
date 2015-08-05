@@ -23,6 +23,7 @@ gem "ransack"
 gem "draper"
 gem "delayed_job_active_record"
 gem "sidekiq"
+gem "whenever", require: false
 
 group :development, :test do
   gem "byebug", "3.4.0"

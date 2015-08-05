@@ -147,3 +147,10 @@ en:
   mailer:
     assigned: "Assigned"
     unassigned: "Unassigned"
+  mailer:
+    course:
+      name: "Course name:"
+      actived: "ACTIVED"
+      notactived: "NOTACTIVED"
+      list_trainees: "List trainees:"
+      info: "Course infomation"

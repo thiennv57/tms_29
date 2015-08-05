@@ -1,0 +1,9 @@
+<h1><%= @receiver.name %></h1>
+<span><%= t "mailer.course.name" %> : <%= @course.name %></span>
+<%= t @course.active_course ? "mailer.course.actived" : "mailer.course.notactived" %>
+<h3><%= t "mailer.course.list_trainees" %></h3>
+<ol>  
+  <% @users.each do |user| %>
+    <li><%= user.name %></li>
+  <% end %>
+</ol>

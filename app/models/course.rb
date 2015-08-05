@@ -16,4 +16,12 @@ class Course < ActiveRecord::Base
     self.update_attributes active: true
     Delayed::Job.enqueue MailingJob.new(self), run_at: 10.seconds.from_now
   end
+
+  def self.send_courses_info_to_supervisor
+    Course.active_course.each do |course|
+      course.users.admins.each do |supervisor|
+        CourseMailer.course_info(course, supervisor).deliver_now
+      end
+    end
+  end
 end
