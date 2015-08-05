@@ -144,10 +144,17 @@ en:
     notice_course_status: "The course %{name} will be close after 2 day"
     notice_assign_trainee: "You assigned course:"
     notice_unassign_trainee: "You unassigned course:"
+    notice_new_user: "New account created"
   mailer:
     assigned: "Assigned"
     unassigned: "Unassigned"
-    notice_course_status: "Notice course status"
-    trainee_daily_report_infomation: "Trainee daily report infomation"
-    notice_course_active: "Course active"
-    announce_course_active: "The course %{name} you assigned is active"
+    new_user: "New account created of TMS"
+    course:
+      name: "Course name:"
+      actived: "ACTIVED"
+      notactived: "NOTACTIVED"
+      list_trainees: "List trainees:"
+      info: "Course infomation"
+    user:
+      name: "User name: "
+      default_pass_word: "Default pass word: password"

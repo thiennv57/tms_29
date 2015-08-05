@@ -12,6 +12,7 @@ class UserCourse < ActiveRecord::Base
   def supervisor_assign_trainee_activity
     create_activity self.user_id, self.user_id,
       Settings.activities.supervisor_assign_trainee
+    AssignTrainee.perform_async self.course.id
   end
 
   def supervisor_remove_trainee_activity
