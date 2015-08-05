@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
     mail to: user.email, subject: I18n.t("mailer.new_user")
   end
 
-  def notice_course_status user, course 
+  def notice_course_status user, course
     @notification = I18n.t("notifications.notice_course_status", name: course.name)
     mail to: user.email
   end
@@ -21,7 +21,7 @@ class UserMailer < ApplicationMailer
     @course = course
     mail to: user.email, subject: I18n.t("mailer.unassigned")
   end
-  
+
   def trainee_daily_report_infomation course
     users = course.users
     @activities = Activity.activities_by_user_ids(users.pluck :id)

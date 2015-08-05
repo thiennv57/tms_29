@@ -158,3 +158,4 @@ en:
     user:
       name: "User name: "
       default_pass_word: "Default pass word: password"
+    monthly_report: "Monthly Report"
