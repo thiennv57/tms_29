@@ -6,7 +6,7 @@ class UserCourse < ActiveRecord::Base
   has_many :subjects, through: :user_course_subjects
 
   after_create :supervisor_assign_trainee_activity
-  before_destroy :supervisor_remove_trainee_activity
+  after_destroy :supervisor_remove_trainee_activity
 
   private
   def supervisor_assign_trainee_activity
@@ -17,5 +17,6 @@ class UserCourse < ActiveRecord::Base
   def supervisor_remove_trainee_activity
     create_activity self.user_id, self.user_id,
       Settings.activities.supervisor_remove_trainee
+    UnassignTrainee.perform_async self.course.id
   end
 end
