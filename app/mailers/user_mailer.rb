@@ -25,4 +25,9 @@ class UserMailer < ApplicationMailer
       mail to: user.email
     end
   end
+
+  def notice_course_active user, course
+    @course = course
+    mail to: user.email, subject: I18n.t("mailer.course_active")
+  end
 end
