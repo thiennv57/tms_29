@@ -16,4 +16,10 @@ class Course < ActiveRecord::Base
     self.update_attributes active: true
     Delayed::Job.enqueue MailingJob.new(self), run_at: 10.seconds.from_now
   end
+
+  def self.daily_report_infomation
+    self.all.each do |course|
+      UserMailer.trainee_daily_report_infomation(course).deliver_now
+    end
+  end
 end

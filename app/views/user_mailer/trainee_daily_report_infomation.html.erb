@@ -1,0 +1,7 @@
+<h1><%= t "mailer.trainee_daily_report_infomation" %></h1>
+<% @activities.each do |activity| %>
+  <div class="row">
+    <%= activity.display %>
+    <%= time_ago_in_words activity.created_at %>
+  </div>
+<% end %>
