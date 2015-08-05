@@ -149,3 +149,5 @@ en:
     unassigned: "Unassigned"
     notice_course_status: "Notice course status"
     trainee_daily_report_infomation: "Trainee daily report infomation"
+    notice_course_active: "Course active"
+    announce_course_active: "The course %{name} you assigned is active"
