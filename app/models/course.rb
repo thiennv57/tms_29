@@ -8,7 +8,7 @@ class Course < ActiveRecord::Base
   scope :active_course, ->{where active: true}
 
   def supervisor_update_course_activity user
-    create_activity user.id, self.id, 
+    create_activity user.id, self.id,
       Settings.activities.supervisor_update_course
   end
 
