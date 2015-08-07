@@ -5,6 +5,10 @@ class Course < ActiveRecord::Base
   has_many :user_courses, dependent: :destroy
   has_many :users, through: :user_courses, dependent: :destroy
 
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :day_work, numericality: true
+
   scope :active_course, ->{where active: true}
 
   def supervisor_update_course_activity user

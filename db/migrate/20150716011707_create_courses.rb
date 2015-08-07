@@ -5,7 +5,7 @@ class CreateCourses < ActiveRecord::Migration
       t.string :description
       t.boolean :active, default: false
       t.datetime :active_at
-      t.integer :day_word 
+      t.integer :day_work
       
       t.timestamps null: false
     end

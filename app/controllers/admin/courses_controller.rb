@@ -1,5 +1,6 @@
 class Admin::CoursesController < ApplicationController
   before_action :init_course, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin
   
   def index
     @courses = Course.paginate page: params[:page], per_page: Settings.per_page
@@ -31,7 +32,7 @@ class Admin::CoursesController < ApplicationController
       flash.now[:failed] = t "messages.admin.destroy.fail"
     end
     respond_to do |format|
-      format.html {redirect_to admin_course_path(@course)}
+      format.html {redirect_to admin_root_url}
       format.js
     end
   end
@@ -58,7 +59,7 @@ class Admin::CoursesController < ApplicationController
   
   private
   def course_params
-    params.require(:course).permit :name, :description, subject_ids: []
+    params.require(:course).permit :name, :description, :day_work, subject_ids: []
   end
 
   def init_course

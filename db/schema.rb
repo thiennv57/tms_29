@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 20150803072424) do
     t.string   "description"
     t.boolean  "active",      default: false
     t.datetime "active_at"
-    t.integer  "day_word"
+    t.integer  "day_work"
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
   end
