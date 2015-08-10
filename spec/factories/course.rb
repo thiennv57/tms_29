@@ -13,7 +13,11 @@ FactoryGirl.define do
     end
 
     factory :invalid_day_work_course do
-      day_work ""
+      day_work {Faker::Lorem.word}
+    end
+
+    factory :actived_course do
+      active true
     end
   end
 end
